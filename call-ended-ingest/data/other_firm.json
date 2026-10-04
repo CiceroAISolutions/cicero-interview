@@ -1,0 +1,16 @@
+{
+  "event": "call_ended",
+  "call": {
+    "call_id": "call_nsl_441",
+    "agent_id": "agent_9f3",
+    "call_type": "phone_call",
+    "direction": "inbound",
+    "from_number": "+15552420002",
+    "to_number": "+12815550000",
+    "start_timestamp": 1712002000000,
+    "end_timestamp": 1712002180000,
+    "disconnection_reason": "user_hangup",
+    "call_status": "ended",
+    "transcript": "Agent: North Shore Legal, this is the intake line.\nUser: I slipped in a grocery store parking lot yesterday."
+  }
+}

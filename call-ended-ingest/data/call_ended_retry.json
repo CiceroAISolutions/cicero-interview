@@ -1,0 +1,64 @@
+{
+  "event": "call_ended",
+  "call": {
+    "call_id": "call_abc123",
+    "agent_id": "agent_9f3",
+    "call_type": "phone_call",
+    "direction": "inbound",
+    "from_number": "+15551230001",
+    "to_number": "+17135559999",
+    "start_timestamp": 1712000000000,
+    "end_timestamp": 1712000360000,
+    "disconnection_reason": "user_hangup",
+    "call_status": "ended",
+    "transcript": "Agent: Thanks for calling Rivera and Associates. How can I help you today?\nUser: Hi, my name is Jordan Hale. I was rear-ended on I-10 last Tuesday and my neck still hurts.\nAgent: I'm sorry to hear that. Were you taken to a hospital?\nUser: Yes, Memorial Hermann. They did X-rays. The other driver was a delivery van.\nAgent: And the best number to reach you is the one you're calling from?\nUser: Yes, 555-123-0001.\nAgent: We also sent a recap to your email after the call.",
+    "transcript_object": [
+      {
+        "role": "agent",
+        "content": "Thanks for calling Rivera and Associates. How can I help you today?"
+      },
+      {
+        "role": "user",
+        "content": "Hi, my name is Jordan Hale. I was rear-ended on I-10 last Tuesday and my neck still hurts."
+      },
+      {
+        "role": "agent",
+        "content": "I'm sorry to hear that. Were you taken to a hospital?"
+      },
+      {
+        "role": "user",
+        "content": "Yes, Memorial Hermann. They did X-rays. The other driver was a delivery van."
+      },
+      {
+        "role": "agent",
+        "content": "And the best number to reach you is the one you're calling from?"
+      },
+      {
+        "role": "user",
+        "content": "Yes, 555-123-0001."
+      },
+      {
+        "role": "agent",
+        "content": "We also sent a recap to your email after the call."
+      }
+    ],
+    "recording_url": "https://vendor.example/rec/call_abc123.wav",
+    "public_log_url": "https://vendor.example/log/call_abc123",
+    "metadata": {
+      "campaign": null
+    },
+    "call_analysis": {
+      "call_summary": "Caller reports a rear-end collision on I-10, neck pain, and treatment at Memorial Hermann.",
+      "user_sentiment": "Neutral",
+      "in_voicemail": false
+    },
+    "call_cost": {
+      "combined_cost": 0.42
+    },
+    "latency": {
+      "e2e": {
+        "p50": 820
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "event": "call_ended",
+  "call": {
+    "call_id": "call_orphan999",
+    "agent_id": "agent_9f3",
+    "call_type": "phone_call",
+    "direction": "inbound",
+    "from_number": "+15551239999",
+    "to_number": "+15550009999",
+    "start_timestamp": 1712001000000,
+    "end_timestamp": 1712001120000,
+    "disconnection_reason": "user_hangup",
+    "call_status": "ended",
+    "transcript": "Agent: Thanks for calling. User: Wrong number, I think."
+  }
+}
