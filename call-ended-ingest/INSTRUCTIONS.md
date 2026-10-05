@@ -12,6 +12,7 @@ Implement `POST /webhooks/voice`. Do not build analysis, documents, auth, or a q
 | `db.py` | SQLite engine, session, `get_db`, seed |
 | `models.py` | Example one-to-many schema (`Author` → `Book`). Not the ingest schema. |
 | `service.py` | Stub for the webhook ingest logic |
+| `llm.py` | Optional `complete(prompt) -> str`. Fake model; no API key. |
 | `data/` | Sample vendor payloads |
 | `requirements.txt` | FastAPI, Uvicorn, SQLAlchemy |
 
@@ -67,6 +68,12 @@ This is a teaching example. One author has many books.
 Add your own tables for this problem. You will want something like a firm and its calls. Copy the same `ForeignKey` / `relationship` pattern.
 
 Put the new classes in `models.py` on the existing `Base`. If you seed firms, import those models in `db.py` and add them in `init_db()` the same way authors are seeded. Do not model every vendor field — keep the raw JSON and read `call_id` / `to_number` from it.
+
+## LLM (optional)
+
+`llm.complete(prompt: str) -> str` stands in for a model call. You do not have to use it. If you do, you decide what to send and what to do with the result.
+
+In production that call is slow and costs money. The stub sleeps briefly and returns untrusted placeholder text.
 
 ## Problem
 
