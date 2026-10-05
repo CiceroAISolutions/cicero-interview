@@ -11,7 +11,7 @@ Implement `POST /webhooks/voice`. Do not build analysis, documents, auth, or a q
 | `app.py` | FastAPI routes: `GET /authors`, stub webhook |
 | `db.py` | SQLite engine, session, `get_db`, seed |
 | `models.py` | Example one-to-many schema (`Author` → `Book`). Not the ingest schema. |
-| `llm.py` | Optional `complete(prompt) -> str`. Fake model; no API key. |
+| `service.py` | Stub for the webhook ingest logic |
 | `data/` | Sample vendor payloads |
 | `requirements.txt` | FastAPI, Uvicorn, SQLAlchemy |
 
@@ -68,12 +68,6 @@ Add your own tables for this problem. You will want something like a firm and it
 
 Put the new classes in `models.py` on the existing `Base`. If you seed firms, import those models in `db.py` and add them in `init_db()` the same way authors are seeded. Do not model every vendor field — keep the raw JSON and read `call_id` / `to_number` from it.
 
-## LLM (optional)
-
-`llm.complete(prompt: str) -> str` stands in for a model call. You do not have to use it. If you do, you decide what to send and what to do with the result.
-
-In production that call is slow and costs money. The stub sleeps briefly and returns untrusted placeholder text.
-
 ## Problem
 
 A voice vendor POSTs JSON like `data/call_ended.json`:
@@ -103,8 +97,9 @@ Known inbound firm numbers:
 ## Implement
 
 1. Add tables (and seed firms if you need them).
-2. Fill in `POST /webhooks/voice` in `app.py`.
-3. Persist enough to list calls per firm later and to debug a payload.
+2. Implement `ingest_voice_webhook` in `service.py`.
+3. Call it from `POST /webhooks/voice` in `app.py`.
+4. Persist enough to list calls per firm later and to debug a payload.
 
 A list/get endpoint is optional if you have time.
 
