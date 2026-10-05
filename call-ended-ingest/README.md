@@ -8,7 +8,7 @@ Candidate brief: **[INSTRUCTIONS.md](INSTRUCTIONS.md)**.
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-uvicorn app:app --reload
+fastapi dev app.py
 ```
 
 `GET /authors` is a smoke test that SQLite is up.

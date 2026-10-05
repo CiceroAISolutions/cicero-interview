@@ -25,7 +25,7 @@ Work in this folder. Python 3.9+ (3.10+ preferred).
 python3 -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-uvicorn app:app --reload
+fastapi dev app.py
 ```
 
 - API: http://127.0.0.1:8000
